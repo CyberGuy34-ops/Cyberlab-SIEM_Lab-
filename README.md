@@ -21,10 +21,8 @@ I installed the roles Active Directory and DNS onto the server
 
 <h1>Troubleshooting why my ADDS wouldn't send the ubuntu server the logs</h1>
 
-Figured out that my drive on the ubuntu server was maxed out due to Wazuh Vulnerability Dector
-Ran the sudo systemctl stop wazuh-manager and sudo pkill -f ossec to stop the service while I escalated my privilege 
-Ran sudo rm -rf /var/ossec/queue/vd_updater to remove the directory and delete the temporary corrupt cache files that was filling my disk up which stopped me from receiving event logs
-Recreated the direcotry with sudo mkdir -p /var/ossec/queue/vd_updater/tmp , gave the permission back to ossec sudo chown -R ossec:ossec /var/ossec/queue/vd_updater
+Figured out that my drive on the ubuntu server was maxed out due to Wazuh Vulnerability Detector. Ran the **sudo systemctl stop wazuh-manager** and **sudo pkill -f ossec** to stop the service while I escalated my privilege. Ran **sudo rm -rf /var/ossec/queue/vd_updater** to remove the directory and delete the temporary corrupt cache files that was filling my disk up which stopped me from receiving event logs.
+Recreated the directory with **sudo mkdir -p /var/ossec/queue/vd_updater/tmp** , gave the permission back to ossec **sudo chown -R ossec:ossec /var/ossec/queue/vd_updater**
 
 <img width="1470" height="956" alt="Screenshot 2026-09-30 at 3 52 33 PM" src="https://github.com/user-attachments/assets/af69cde6-1898-4f03-8203-aa72ac4fb66d" />
 
